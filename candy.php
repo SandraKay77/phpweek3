@@ -88,11 +88,13 @@ $candies = [
 ["Whoppers", 49.524, 0.872, 0.848],
 ];
 
-$candy1 = $candies[array_rand($candies)];
-$candy2 = $candies[array_rand($candies)];
 
-$choice_one = strval($candy1[0]);
-$choice_two = strval($candy2[0]);
+$candyA = $candies[array_rand($candies)];
+$candyB = $candies[array_rand($candies)];
+
+$choice_one = "  " . $candyA[0];
+$choice_two = "  " . $candyB[0];
+
 
 ?>
 <!DOCTYPE html>
@@ -115,11 +117,14 @@ $choice_two = strval($candy2[0]);
     <form method="post" action="candyresults.php">
 
 <label>
-<input type="radio" id="candy1" name="candy_choice" value=<?php echo $choice_one?>> <?php echo $choice_one?>
+<input type="radio" name="candy" <?php if (isset($candy) && $candy==$choice_one) echo "checked";?> value="<?php echo htmlentities(serialize($candyA));?>">
+    <?php echo $choice_one?>
 </label>
 <br><br>
         <label>
-    <input type="radio" name="candy_choice" value=<?php echo $choice_two?>> <?php echo $choice_two?>
+
+    <input type="radio" name="candy" <?php if (isset($candy) && $candy==$choice_two) echo "checked";?> value="<?php echo htmlentities(serialize($candyB));?>">
+            <?php echo $choice_two?>
 </label>
 
     <br><br>

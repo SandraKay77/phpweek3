@@ -2,17 +2,19 @@ body {
     background: cornsilk;
 }
 div {
-    display: block;
     background: lightgrey;
     border: solid black;
-    width: 100%;
-    height: 50%;
+    width: 60%;
+    margin: auto;
     text-align: center;
+
+}
+table {
+    margin: auto;
+    width: 95%;
 }
 
-
 td, th {
-    border:2px solid red;
-    width: 100%;
+    border: 2px solid red;
     text-align: center;
 }
